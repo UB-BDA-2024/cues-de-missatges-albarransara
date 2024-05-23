@@ -179,13 +179,13 @@ def test_get_sensor_data_3_month():
 
 
 def test_post_sensor_data_not_exists():
-    response = client.post("/sensors/4/data", json={"temperature": 1.0, "humidity": 1.0, "battery_level": 1.0,
+    response = client.post("/sensors/434/data", json={"temperature": 1.0, "humidity": 1.0, "battery_level": 1.0,
                                                     "last_seen": "2020-01-01T00:00:00.000Z"})
     assert response.status_code == 404
     assert "Sensor not found" in response.text
 
 
 def test_get_sensor_data_not_exists():
-    response = client.get("/sensors/4/data")
+    response = client.get("/sensors/234/data")
     assert response.status_code == 404
     assert "Sensor not found" in response.text
