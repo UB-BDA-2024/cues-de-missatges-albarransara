@@ -3,10 +3,10 @@ from sqlalchemy.orm import Session
 from typing import List, Optional
 from datetime import datetime
 
-from shared.mongodb_client import MongoDBClient
-from shared.redis_client import RedisClient
-from shared.sensors import models, schemas
-from shared.timescale import Timescale
+from app.mongodb_client import MongoDBClient
+from app.redis_client import RedisClient
+from app.shared.sensors import models, schemas
+from app.timescale import Timescale
 
 
 class DataCommand():

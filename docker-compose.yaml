@@ -16,7 +16,6 @@ services:
       - elasticsearch
       - timescale
       - cassandra
-      - rabbitmq
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
@@ -35,19 +34,6 @@ services:
     networks:
       - app_network
 
-  rabbitmq:
-    image: rabbitmq:3-management-alpine
-    command: rabbitmq-server
-    container_name: 'rabbitmq'
-    ports:
-        - 5672:5672
-        - 15672:15672
-    volumes:
-        - rabbitmq_data:/var/lib/rabbitmq
-        - rabbitmq_log:/var/log/rabbitmq
-    networks:
-        - app_network
-  
   postgreSQL:
     image: postgres:14-alpine
     volumes:
@@ -132,8 +118,6 @@ volumes:
   esdata:
     driver: local
   cassandra_data:
-  rabbitmq_data:
-  rabbitmq_log:
 
 networks:
   app_network:
