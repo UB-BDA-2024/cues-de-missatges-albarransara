@@ -1,7 +1,7 @@
 import pika
 import time
 
-from shared.publisher import QUEUE_NAME
+from app.shared.publisher import QUEUE_NAME
 
 class Subscriber:
     def __init__(self):
